@@ -1,0 +1,56 @@
+<view catchtap='hideFlag'>
+  <scroll-view scroll-y style="height:600px" scroll-top="{{sTop}}" class="chat-content-wrapper {{!showContent?'hidden-conten':''}}">
+    <view id='chat-ref' style='margin-bottom:140px'>
+      <view wx:for="{{chatContent}}">
+        <view class='chatTime' wx:if="{{item['.value']['time']}}">{{item['.value']['time'] }}</view>
+        <view class='self-wrapper' wx:if='{{item[".value"]["sid"]==sid&&item[".value"]["msg"]==1}}'>
+          <image src='{{seller.avatar}}' class='self-avatar'></image>
+          <view class='self-text-wrapper'>
+            <view class='self-text'>{{item['.value']['message']}}</view>
+          </view>
+          <view class='clr'></view>
+        </view>
+        <view class='self-wrapper' wx:if='{{item[".value"]["image"]==1&&item[".value"]["sid"]==sid}}'>
+          <image src='{{seller.avatar}}' class='self-avatar'></image>
+          <view class='self-img-wrapper'>
+            <image class='chat-img' src='{{item[".value"]["url"]}}' mode='widthFix'></image>
+          </view>
+          <view class='clr'></view>
+        </view>
+
+
+        <view class='other-wrapper' wx:if='{{item[".value"]["uid"]==uid&&item[".value"]["msg"]==1}}'>
+          <view class='other-text-wrapper'>
+            <view class='self-text'>{{item['.value']['message']}}</view>
+          </view>
+          <image src='{{item[".value"]["avatar"]}}' class='other-avatar'></image>
+        </view>
+        <view class='other-wrapper' wx:if='{{item[".value"]["uid"]==uid&&item[".value"]["image"]==1}}'>
+          <view class='other-image-wrapper'>
+            <image class='chat-img' src='{{item[".value"]["url"]}}' mode='widthFix'></image>
+          </view>
+          <image src='{{item[".value"]["avatar"]}}' class='other-avatar'></image>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+<view class='chat-wrapper' wx:if="{{showContent2}}">
+  <view class='chat-container'>
+    <view class='input-container'>
+      <input bindinput="bindReplaceInput" bindfocus='hideFlag' value="{{content}}" placeholder="请输入" placeholder-style='font-size:32rpx' />
+    </view>
+    <view class='submit-container'>
+      <view wx:if="{{content==''}}" class='icon-addition' catchtap='showFlag'></view>
+      <view wx:else catchtap='submitMessage' class='submit-handle'>发送</view>
+    </view>
+  </view>
+  <view class='media-container' wx:if="{{flag}}">
+  
+    <view class='media-item' catchtap='sendImage'>
+      <text class='icon-picture_fill'></text>
+      <view class='media-item-text'>图片</view>
+    </view>
+  </view>
+</view>
+
