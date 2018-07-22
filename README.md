@@ -33,7 +33,7 @@ var config = {
   
 
 
-![Image text](https://kaolaplay.com/all.gif)
+![Image text](https://media.kaolaplay.com/all.gif)
 
 
 
