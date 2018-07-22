@@ -1,89 +1,52 @@
-# vue-learn 一款提供家教服务的平台
+# wx-chat 一款可以实现在线实时聊天的小程序
 
-> A Vue.js project
+> A chat project for wechat
 
 ## 使用步骤
 
 
-# 下载源码
-使用 git clone 下载源码到你的服务器
+# 配制野狗云通讯，创建自己的应用
+目前为了让大家可以实时看到小程序运行的效果，所以小程序里面还是保存着我自己的野狗云运用仓库，所以请自己使用野狗云配置好自己的仓库路径，野狗云使用非常简单易懂，而且官网有文档教程，大家花点心思就会懂，通过百度野狗云通讯即可找到
+var config = {
+  syncURL: 'https://wd3992943232pgdwgw.wilddogio.com',
+  authDomain: 'wd3992943232pgdwgw'
+}
 
-# 安装依赖
-使用npm install 安装项目需要的文依赖
+为了大家能够真正明白，这里贴了代码，直接找到小程序文件里的index.js文件，把config里面的syncURL和authDomain换成你在野狗云中创建的应用配置即可，相信说到这里大家应该都很清楚了吧，只要配置好野够云的应用，并替换一下config配置里的信息，所有小程序里的聊天信息就会保存到你自己的应用当中了
 
-# 测试运行
-npm run dev
+
+# 创建自己的图片上传api接口
+同样的为了让大家能完整体验发送图片的功能，在小程序里的保存图片的api接口是我自己写的接口，所以大家下载下来后，把接口换成自己的哈，因为我自己开发的接口图片是保存在七牛并返回一个链接，而七牛存储空间有限，而且要收费，希望大家体谅一下，测试完后就改成自己的接口
+
 
 # 提示
 
- 如果有什么需要了解的地方，请联系qq，1204718708@qq.com
+ 如果有什么需要了解的地方，请联系qq邮箱，1204718708@qq.com
 
 
 
 
 
-# 项目展示之个人登陆注册
+# 实时聊天效果图展示
    
- 通过输入用户名和密码进行登陆
+ 只要自己琢磨透源码里面的内容，自己生成两个小程序，便可实现以下实时在线聊天功能啦
   
 
 
-![Image text](http://ovll6qxz5.bkt.clouddn.com/login.gif)
+![Image text](https://kaolaplay.com/all.gif)
 
 
 
 
 
-# 项目展示之首页
+# 项目开发初衷
   
-  首页展示机构信息
-
-![Image text](http://ovll6qxz5.bkt.clouddn.com/home.gif)
-
-
-
-# 项目展示之机构简介
-
-  讲述机构简介
- 
-![Image text](http://ovll6qxz5.bkt.clouddn.com/learn.gif)
+  因项目开发需要实现一个在线聊天功能，但发现已有的开源的实时聊天功能，一片空白，勉强有关联的也并不能满足自己的需求，所以便自己动手开发，在其中踩了很多坑，吃了很多苦，为了让跟我有同样需求的小伙伴可以跳过这些坑，所以决定开源该项目，如果你觉得不错，希望可以得到你的一颗星星，感兴趣的朋友也可以pull request 让这个项目可以更加完善
 
 
 
 
 
-
-# 项目展示之搜索
-
- 搜索需要的机构信息
-
-
-![Image text](http://ovll6qxz5.bkt.clouddn.com/search.gif)
-
-
-
-
-
-# 项目展示之聊天
-
-   客服聊天功能
-
-
-
-![Image text](http://ovll6qxz5.bkt.clouddn.com/chat.gif)
-
-
-
-
-# 项目展示之个人中心
-   个人中心信息
-
-
-
-![Image text](http://ovll6qxz5.bkt.clouddn.com/person.gif)
-
-
-
-# 剩余页面。请自行clone到自己电脑查看
+# 实现原理，请自行clone到自己电脑查看
   
   谢谢你的关注
